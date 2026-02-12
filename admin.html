@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Login</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      height:100vh;
+      background:
+        linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.7)),
+        url("photo.jpg.webp") center/cover no-repeat;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .login{
+      background:rgba(141, 181, 219, 0.95);
+      padding:35px;
+      width:330px;
+      border-radius:14px;
+      text-align:center;
+      box-shadow:0 15px 35px rgba(0,0,0,.4);
+      animation:fade 1s ease;
+    }
+
+    @keyframes fade{
+      from{opacity:0; transform:translateY(20px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+
+    .login img{
+      width:90px;
+      margin-bottom:15px;
+    }
+
+    h2{
+      margin-bottom:15px;
+      color:#023e8a;
+    }
+
+    input{
+      width:100%;
+      padding:12px;
+      margin:10px 0;
+      border-radius:8px;
+      border:1px solid #a6b6ec;
+      font-size:15px;
+    }
+
+    button{
+      width:100%;
+      padding:12px;
+      margin-top:10px;
+      background:#0077b6;
+      color:rgb(221, 225, 226);
+      border:none;
+      border-radius:8px;
+      font-size:16px;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#023e8a;
+    }
+
+    p{
+      color:red;
+      margin-top:10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login">
+  <h2>Admin Login</h2>
+
+  <input id="user" placeholder="Username">
+  <input id="pass" type="password" placeholder="Password">
+
+  <button onclick="login()">Login</button>
+  <p id="msg"></p>
+</div>
+
+<script>
+function login(){
+  if(user.value==="prasad" && pass.value==="1234"){
+    localStorage.setItem("adminLoggedIn","true");
+    window.location.href="travel&tourism.html";
+  } else {
+    msg.innerText="Invalid Username or Password";
+  }
+}
+</script>
+
+</body>
+</html>
